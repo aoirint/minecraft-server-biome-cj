@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  minecraft:
+    image: itzg/minecraft-server:2022.12.0-java17-jdk
+    ports:
+      - "${SERVER_PORT}:25565"
+      - "${HOST_DYNMAP_PORT}:8123"
+    environment:
+      EULA: "TRUE"
+      TZ: ${TZ}
+      TYPE: "FORGE" # https://github.com/itzg/docker-minecraft-server#server-types
+      VERSION: "1.19.2" # https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs
+      FORGE_VERSION: "43.1.1"
+      DIFFICULTY: ${DIFFICULTY}
+      SERVER_NAME: ${SERVER_NAME}
+      ENABLE_WHITELIST: ${ENABLE_WHITELIST}
+      WHITELIST: ${WHITELIST}
+      OPS: ${OPS}
+      SPAWN_PROTECTION: ${SPAWN_PROTECTION}
+      VIEW_DISTANCE: ${VIEW_DISTANCE}
+      SEED: ${SEED}
+      MODE: ${MODE}
+      PVP: ${PVP}
+      LEVEL_TYPE: ${LEVEL_TYPE}
+      GENERATOR_SETTINGS: ${GENERATOR_SETTINGS}
+      ONLINE_MODE: ${ONLINE_MODE}
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - ./data:/data

@@ -1,0 +1,6 @@
+/data
+/modpacks
+/backups
+/logs
+.env*
+
