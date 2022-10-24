@@ -25,6 +25,7 @@ services:
       LEVEL_TYPE: ${LEVEL_TYPE}
       GENERATOR_SETTINGS: ${GENERATOR_SETTINGS}
       ONLINE_MODE: ${ONLINE_MODE}
+      MEMORY: ${MEMORY}
     tty: true
     stdin_open: true
     restart: always
